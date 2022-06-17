@@ -1,0 +1,19 @@
+{
+  "name": "codeschool-week4",
+  "version": "0.0.1",
+  "description": "The Newest Node packet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Konnor-Young/CodeSchool-week4.git"
+  },
+  "author": "Konnor Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Konnor-Young/CodeSchool-week4/issues"
+  },
+  "homepage": "https://github.com/Konnor-Young/CodeSchool-week4#readme"
+}
