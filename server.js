@@ -1,8 +1,13 @@
 // initiate express server
 const express = require('express');
 const app = express();
+var expressWs = require('express-ws');
 
-app.use(express.json());
+app.use((req, res, next)=>{
+        express.json(),
+        expressWs(app),
+        next()
+    });
 
 //pull in schema model
 const memory = require("./persist/memory");
@@ -10,6 +15,15 @@ const Todo = require("./persist/todo");
 const helpers = require("./helper");
 
 //server paths and handlers
+app.ws('/echo', (req, res) => {
+    ws.on('connection', () => {
+        console.log('someone connected');
+    });
+    ws.on('message', (msg)=>{
+        ws.send(msg);
+    });
+});
+
 app.get("/todo/:id", (req, res) => {
     const id = req.params.id;
     Todo.findById(id)
